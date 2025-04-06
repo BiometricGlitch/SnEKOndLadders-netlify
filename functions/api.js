@@ -5,7 +5,7 @@ const path = require('path');
 const app = express();
 
 // Set view engine
-app.set('view-engine', 'pug');
+app.set('view engine', 'pug');
 app.set('views', './views');
 
 // Serve static files
@@ -13,7 +13,7 @@ app.use(express.static('public'));
 
 // Route
 app.get('/', (req, res) => {
-  res.render('index');
+  res.render(path.join(__dirname, '/views/index.pug'));
 });
 
 module.exports.handler = serverless(app);

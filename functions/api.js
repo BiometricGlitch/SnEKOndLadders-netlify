@@ -5,6 +5,7 @@ const path = require('path');
 const app = express();
 
 // Set view engine
+app.engine('pug', require('pug').__express);
 app.set('view engine', 'pug');
 app.set('views', './views');
 

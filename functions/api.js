@@ -14,7 +14,7 @@ app.use(express.static('public'));
 
 // Route
 app.get('/', (req, res) => {
-  res.render('index');
+  res.render('index.pug');
 });
 
 module.exports.handler = serverless(app);

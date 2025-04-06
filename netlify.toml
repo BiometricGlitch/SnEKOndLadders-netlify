@@ -1,14 +1,8 @@
 [build]
-  functions = "functions"
-  command = "npm install pug"
+  functions = "netlify/functions"
+  command = "npm install"
 
 [[redirects]]
   from = "/*"
   to = "/.netlify/functions/api"
   status = 200
-
-    
-[[headers]]
-    for = "/*"
-        [headers.values]
-            Access-Control-Allow-Origin = "*"

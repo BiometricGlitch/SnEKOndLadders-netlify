@@ -1,8 +1,12 @@
 [build]
-  functions = "netlify/functions"
-  command = "npm install"
-
+    functions = "functions"
+    node_bundler = "esbuild"
 [[redirects]]
-  from = "/*"
-  to = "/.netlify/functions/api"
-  status = 200
+    from = "/*"
+    to = "/.netlify/functions/api/:splat"
+    status = 200
+    
+[[headers]]
+    for = "/*"
+        [headers.values]
+            Access-Control-Allow-Origin = "*"

@@ -3,17 +3,18 @@
     "version": "1.0.0",
     "main": "functions/api.js",
     "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "description": "",
     "dependencies": {
-      "@types/node": "^18.0.6",
-      "axios": "^1.4.0",
-      "cors": "^2.8.5",
-      "express": "^4.19.2",
-      "serverless-http": "^3.2.0"
+        "@types/node": "^18.0.6",
+        "axios": "^1.4.0",
+        "cors": "^2.8.5",
+        "express": "^4.19.2",
+        "pug": "^3.0.3",
+        "serverless-http": "^3.2.0"
     }
-}  
+}

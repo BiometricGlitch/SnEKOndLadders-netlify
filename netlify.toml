@@ -1,10 +1,12 @@
 [build]
-    functions = "functions"
-    node_bundler = "esbuild"
+  functions = "functions"
+  command = "npm install"
+
 [[redirects]]
-    from = "/*"
-    to = "/.netlify/functions/api/:splat"
-    status = 200
+  from = "/*"
+  to = "/.netlify/functions/api"
+  status = 200
+
     
 [[headers]]
     for = "/*"

@@ -7,10 +7,10 @@ const app = express();
 // Set view engine
 app.engine('pug', require('pug').__express);
 app.set('view engine', 'pug');
-app.set('views', './views');
+app.set('views', path.join(__dirname, '/views'));
 
 // Serve static files
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, '/public')));
 
 // Route
 app.get('/', (req, res) => {

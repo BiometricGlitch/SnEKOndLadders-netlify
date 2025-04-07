@@ -1,3 +1,14 @@
 [build]
-    functions = "functions"
-    node_bundler = "esbuild"
+  functions = "functions"
+  command = "npm start"
+
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/api"
+  status = 200
+
+    
+[[headers]]
+    for = "/*"
+        [headers.values]
+            Access-Control-Allow-Origin = "*"

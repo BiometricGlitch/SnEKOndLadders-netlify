@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 // Route
 app.get('/', (req, res) => {
-  res.render(path.join(__dirname, '/views/index.pug'));
+  res.render('index');
 });
 
 module.exports.handler = serverless(app);

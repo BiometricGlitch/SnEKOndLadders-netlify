@@ -165,9 +165,9 @@ each players in [1,2,3,4]
       
     
 - var randomIndex = Math.floor(Math.random() * 5) // Generates a random index (0 to 4)
-- var possibleTexts1 = ["Sektor ng Agrikultura", "Pagsasaka", "Pagsasaka", "Paghahayupan", "Pangingisda"]
-- var possibleTexts2 = ["Sektor ng Serbisyo", "Paggugubat", "Pangingisda", "Pagsasaka", "Paggugubat"]
-- var possibleTexts3 = ["Ano ang pinagmulan ng mga hilaw na sangkap na ginagamit sa sektor ng industriya upang makagawa ng bagong produkto at serbisyo?", "Ano ang pinakamalaking bahagdan ng produksyon sa agrikultura?", "Ano ang isang kilalang agrikultural na gawain sa mga papaunlad na bansa, tulad ng Pilipinas at Indonesia?", "Ano ang tawag sa pag-aalaga ng iba't ibang hayop na kinokonsumo ng mga tao bilang pagkain?", "Ano ang tawag sa panghuhuli ng isda sa mga ilog, lawa, o dagat?"]
+- var possibleTexts1 = ["Sektor ng Agrikultura", "Pagsasaka", "Pagsasaka", "Paghahayupan", "Pangingisda", "Pagbabago tungo sa mas mataas na antas ng pamumuhay", "Pagkakaroon ng maayos na trabaho", "Pambansang pag-unlad", "Pagpapabuti ng kabuuang kalidad ng buhay ng mga tao", "Pagkakaroon ng pantay-pantay na karapatan", "Pang-ekonomiyang pag-unlad", "Sustainable development", "Matapat na pamumuno", "Makamit ang kaalaman para sa ikabubuti ng sarili at lipunan", "Pinapabilis nito ang komunikasyon at trabaho"]
+- var possibleTexts2 = ["Sektor ng Serbisyo", "Paggugubat", "Pangingisda", "Pagsasaka", "Paggugubat", "Pananatili sa parehong estado ng buhay", "Pag-asa lamang sa suwerte", "Personal na kaligayahan", "Pagpapalakas ng kapangyarihan ng pamahalaan", "Paglaganap ng diskriminasyon", "Panrelihiyong pag-unlad", "Pagsunog ng kagubatan", "Korapsyon sa pamahalaan", "Magmayabang sa ibang tao", "Nililimitahan nito ang pag-aaral"]
+- var possibleTexts3 = ["Ano ang pinagmulan ng mga hilaw na sangkap na ginagamit sa sektor ng industriya upang makagawa ng bagong produkto at serbisyo?", "Ano ang pinakamalaking bahagdan ng produksyon sa agrikultura?", "Ano ang isang kilalang agrikultural na gawain sa mga papaunlad na bansa, tulad ng Pilipinas at Indonesia?", "Ano ang tawag sa pag-aalaga ng iba't ibang hayop na kinokonsumo ng mga tao bilang pagkain?", "Ano ang tawag sa panghuhuli ng isda sa mga ilog, lawa, o dagat?", "Ano ang ibig sabihin ng \"pag-unlad\"?", "Alin sa mga sumusunod ang nagpapakita ng pag-unlad?", "Anong uri ng pag-unlad ang tumutukoy sa pagbabago sa kabuuang ekonomiya ng bansa?", "Ano ang pangunahing layunin ng pag-unlad ayon sa aralin?", "Ano ang isang halimbawa ng panlipunang pag-unlad?", "Anong aspeto ng pag-unlad ang may kinalaman sa kabuhayan at trabaho ng mga mamamayan?", "Ano ang tawag sa pag-unlad na nagpapahalaga sa likas na yaman at kalikasan?", "Alin sa mga sumusunod ang hindi nakatutulong sa pag-unlad?", "Ano ang layunin ng edukasyon sa konteksto ng pag-unlad?", "Paano nakakatulong ang teknolohiya sa pag-unlad?"]
     
 #ladder-popup.scrim
   div.box
@@ -188,25 +188,55 @@ each players in [1,2,3,4]
   script.
     document.addEventListener("DOMContentLoaded", function() {
       const possibleTexts1 = [
-        "Sektor ng Agrikultura", 
-        "Pagsasaka", 
-        "Pagsasaka", 
-        "Paghahayupan", 
-        "Pangingisda"
+        "Sektor ng Agrikultura",
+        "Pagsasaka",
+        "Pagsasaka",
+        "Paghahayupan",
+        "Pangingisda",
+        "Pagbabago tungo sa mas mataas na antas ng pamumuhay",
+        "Pagkakaroon ng maayos na trabaho",
+        "Pambansang pag-unlad",
+        "Pagpapabuti ng kabuuang kalidad ng buhay ng mga tao",
+        "Pagkakaroon ng pantay-pantay na karapatan",
+        "Pang-ekonomiyang pag-unlad",
+        "Sustainable development",
+        "Matapat na pamumuno",
+        "Makamit ang kaalaman para sa ikabubuti ng sarili at lipunan",
+        "Pinapabilis nito ang komunikasyon at trabaho"
       ];
       const possibleTexts2 = [
-        "Sektor ng Serbisyo", 
-        "Paggugubat", 
-        "Pangingisda", 
-        "Pagsasaka", 
-        "Paggugubat"
+        "Sektor ng Serbisyo",
+        "Paggugubat",
+        "Pangingisda",
+        "Pagsasaka",
+        "Paggugubat",
+        "Pananatili sa parehong estado ng buhay",
+        "Pag-asa lamang sa suwerte",
+        "Personal na kaligayahan",
+        "Pagpapalakas ng kapangyarihan ng pamahalaan",
+        "Paglaganap ng diskriminasyon",
+        "Panrelihiyong pag-unlad",
+        "Pagsunog ng kagubatan",
+        "Korapsyon sa pamahalaan",
+        "Magmayabang sa ibang tao",
+        "Nililimitahan nito ang pag-aaral"
       ];
       const possibleTexts3 = [
-        "Ano ang pinagmulan ng mga hilaw na sangkap na ginagamit sa sektor ng industriya upang makagawa ng bagong produkto at serbisyo?", 
-        "Ano ang pinakamalaking bahagdan ng produksyon sa agrikultura?", 
-        "Ano ang isang kilalang agrikultural na gawain sa mga papaunlad na bansa, tulad ng Pilipinas at Indonesia?", 
-        "Ano ang tawag sa pag-aalaga ng iba't ibang hayop na kinokonsumo ng mga tao bilang pagkain?", 
-        "Ano ang tawag sa panghuhuli ng isda sa mga ilog, lawa, o dagat?"
+        "Ano ang pinagmulan ng mga hilaw na sangkap na ginagamit sa sektor ng industriya upang makagawa ng bagong produkto at serbisyo?",
+        "Ano ang pinakamalaking bahagdan ng produksyon sa agrikultura?",
+        "Ano ang isang kilalang agrikultural na gawain sa mga papaunlad na bansa, tulad ng Pilipinas at Indonesia?",
+        "Ano ang tawag sa pag-aalaga ng iba't ibang hayop na kinokonsumo ng mga tao bilang pagkain?",
+        "Ano ang tawag sa panghuhuli ng isda sa mga ilog, lawa, o dagat?",
+        "Ano ang ibig sabihin ng \"pag-unlad\"?",
+        "Alin sa mga sumusunod ang nagpapakita ng pag-unlad?",
+        "Anong uri ng pag-unlad ang tumutukoy sa pagbabago sa kabuuang ekonomiya ng bansa?",
+        "Ano ang pangunahing layunin ng pag-unlad ayon sa aralin?",
+        "Ano ang isang halimbawa ng panlipunang pag-unlad?",
+        "Anong aspeto ng pag-unlad ang may kinalaman sa kabuhayan at trabaho ng mga mamamayan?",
+        "Ano ang tawag sa pag-unlad na nagpapahalaga sa likas na yaman at kalikasan?",
+        "Alin sa mga sumusunod ang hindi nakatutulong sa pag-unlad?",
+        "Ano ang layunin ng edukasyon sa konteksto ng pag-unlad?",
+        "Paano nakakatulong ang teknolohiya sa pag-unlad?"
       ];
 
       function regenerateText() {
